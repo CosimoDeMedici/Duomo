@@ -1,4 +1,4 @@
 ElDuomo
 =======
 
-Main project for 
+Main project for code sharing.
