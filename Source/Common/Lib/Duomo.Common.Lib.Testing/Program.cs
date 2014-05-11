@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 
 //using Duomo.Common.Lib.Testing.IO;
+using Duomo.Common.Lib.Testing.BasicPipeline;
 
 
 namespace Duomo.Common.Lib.Testing
@@ -13,6 +14,7 @@ namespace Duomo.Common.Lib.Testing
         static void Main(string[] args)
         {
             //TestCommandLineArgsExample.SubMain();
+            BasicPipelineExamples.SubMain();
         }
     }
 }

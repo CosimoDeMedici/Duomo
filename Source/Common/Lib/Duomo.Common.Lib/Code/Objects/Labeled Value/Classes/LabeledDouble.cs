@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace Duomo.Common.Lib.Objects
+namespace Duomo.Common.Lib
 {
     public class LabeledDouble : LabeledValueBase<double>
     {

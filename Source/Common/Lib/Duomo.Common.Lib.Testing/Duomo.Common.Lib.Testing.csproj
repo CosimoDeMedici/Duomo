@@ -45,6 +45,14 @@
   <ItemGroup>
     <Compile Include="Code\IO\Command Line Arguments\TestCommandLineArgsExample.cs" />
     <Compile Include="Code\IO\Command Line Arguments\TestCommandLineArgs.cs" />
+    <Compile Include="Code\MOVE\Basic Pipeline\BasicPipelineExamples.cs" />
+    <Compile Include="Code\MOVE\Basic Pipeline\MOVE\Model\TestModelA.cs" />
+    <Compile Include="Code\MOVE\Basic Pipeline\MOVE\Model\TestModelB.cs" />
+    <Compile Include="Code\MOVE\Basic Pipeline\MOVE\Operations\Pipelines\SetTestModelAValues.cs" />
+    <Compile Include="Code\MOVE\Basic Pipeline\MOVE\Operations\Pipelines\SetTestModelBValues.cs" />
+    <Compile Include="Code\MOVE\Basic Pipeline\MOVE\Operations\SetValueDouble.cs" />
+    <Compile Include="Code\MOVE\Basic Pipeline\MOVE\Operations\SetValueString.cs" />
+    <Compile Include="Code\MOVE\Basic Pipeline\MOVE\Operations\SetValueStringB.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -54,6 +62,7 @@
       <Name>Duomo.Common.Lib</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

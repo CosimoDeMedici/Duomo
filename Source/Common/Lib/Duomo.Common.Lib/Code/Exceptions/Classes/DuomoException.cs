@@ -1,28 +1,30 @@
 ﻿using System;
 using System.Runtime.Serialization;
+using System.Security;
 
 
 namespace Duomo.Common.Lib
 {
     [Serializable]
-    public class ExceptionDuomo : Exception
+    public class DuomoException : Exception
     {
-        public ExceptionDuomo()
+        public DuomoException()
             : base()
         {
         }
 
-        public ExceptionDuomo(string message)
+        public DuomoException(string message)
             : base(message)
         {
         }
 
-        public ExceptionDuomo(string message, Exception innerException)
+        public DuomoException(string message, Exception innerException)
             : base(message, innerException)
         {
         }
 
-        public ExceptionDuomo(SerializationInfo info, StreamingContext context)
+        [SecuritySafeCritical]
+        protected DuomoException(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
         }

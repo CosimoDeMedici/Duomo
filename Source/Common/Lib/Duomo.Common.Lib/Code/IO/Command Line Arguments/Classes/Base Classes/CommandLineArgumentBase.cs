@@ -1,6 +1,6 @@
 ﻿using System;
 
-using Duomo.Common.Lib.Objects;
+using Duomo.Common.Lib;
 
 
 namespace Duomo.Common.Lib.IO

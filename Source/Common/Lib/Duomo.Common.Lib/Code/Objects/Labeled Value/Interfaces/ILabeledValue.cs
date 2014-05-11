@@ -1,12 +1,10 @@
 ﻿using System;
 
 
-namespace Duomo.Common.Lib.Objects
+namespace Duomo.Common.Lib
 {
-    public interface ILabeledValue
+    public interface ILabeledValue : ILabeled
     {
-        string Name { get; set; }
-        string Description { get; set; }
         object Value { get; set; }
     }
 

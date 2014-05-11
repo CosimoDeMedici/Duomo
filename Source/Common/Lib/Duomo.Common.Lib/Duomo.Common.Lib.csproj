@@ -40,8 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="Code\Exceptions\Classes\ExceptionDuomo.cs" />
+    <Compile Include="Code\Enumerations\AddedOrRemovedEnumeration.cs" />
+    <Compile Include="Code\Enumerations\RunStatusEnumeration.cs" />
+    <Compile Include="Code\Exceptions\Classes\DuomoArgumentException.cs" />
+    <Compile Include="Code\Exceptions\Classes\DuomoNullArgumentException.cs" />
+    <Compile Include="Code\Exceptions\Classes\DuomoWrongTypeException.cs" />
+    <Compile Include="Code\Exceptions\Classes\DuomoException.cs" />
     <Compile Include="Code\IO\Command Line Arguments\Classes\Base Classes\CommandLineArgumentBase.cs" />
     <Compile Include="Code\IO\Command Line Arguments\Classes\Base Classes\CommandLineArgumentsStructureBase.cs" />
     <Compile Include="Code\IO\Command Line Arguments\Classes\DataArgument.cs" />
@@ -50,14 +54,34 @@
     <Compile Include="Code\IO\Command Line Arguments\Interfaces\ICommandLineArgumentsStructure.cs" />
     <Compile Include="Code\IO\Command Line Arguments\Interfaces\IDataArgument.cs" />
     <Compile Include="Code\IO\Command Line Arguments\Interfaces\IOptionArgument.cs" />
+    <Compile Include="Code\MOVE\Events\Classes\InstanceChangedEventArgs.cs" />
+    <Compile Include="Code\MOVE\Events\Classes\OperationsNodesListChangedEventArgs.cs" />
+    <Compile Include="Code\MOVE\Model\Classes\Base Classes\ModelBase.cs" />
+    <Compile Include="Code\MOVE\Model\Classes\ModelHolder.cs" />
+    <Compile Include="Code\MOVE\Model\Classes\Run.cs" />
+    <Compile Include="Code\MOVE\Model\Interfaces\IModel.cs" />
+    <Compile Include="Code\MOVE\Model\Interfaces\IModelHolder.cs" />
+    <Compile Include="Code\MOVE\Operations\Classes\Base Classes\OperationBase.cs" />
+    <Compile Include="Code\MOVE\Operations\Classes\Base Classes\OperationNodeBase.cs" />
+    <Compile Include="Code\MOVE\Operations\Classes\Base Classes\OperationPipelineBase.cs" />
+    <Compile Include="Code\MOVE\Operations\Classes\Runners\Classes\BasicOperationPipelineRunner.cs" />
+    <Compile Include="Code\MOVE\Operations\Classes\Runners\Classes\BasicOperationRunner.cs" />
+    <Compile Include="Code\MOVE\Operations\Classes\Runners\Interfaces\IOperationNodeRunner.cs" />
+    <Compile Include="Code\MOVE\Operations\Interfaces\IOperation.cs" />
+    <Compile Include="Code\MOVE\Operations\Interfaces\IOperationNode.cs" />
+    <Compile Include="Code\MOVE\Operations\Interfaces\IOperationPipeline.cs" />
+    <Compile Include="Code\MOVE\Model\Interfaces\IRun.cs" />
     <Compile Include="Code\Objects\Labeled Value\Classes\Base Classes\LabeledValueBase.cs" />
     <Compile Include="Code\Objects\Labeled Value\Classes\LabeledDouble.cs" />
     <Compile Include="Code\Objects\Labeled Value\Classes\LabeledInt.cs" />
     <Compile Include="Code\Objects\Labeled Value\Classes\LabeledString.cs" />
     <Compile Include="Code\Objects\Labeled Value\Interfaces\ILabeledValue.cs" />
+    <Compile Include="Code\Objects\Labeled\Interfaces\ILabeled.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Code\Objects\Labeled\Classes\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
