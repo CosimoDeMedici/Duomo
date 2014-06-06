@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\..\Lib\log4net\1.2.13\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +49,7 @@
     <Compile Include="Code\Exceptions\Classes\DuomoNullArgumentException.cs" />
     <Compile Include="Code\Exceptions\Classes\DuomoWrongTypeException.cs" />
     <Compile Include="Code\Exceptions\Classes\DuomoException.cs" />
+    <Compile Include="Code\Extensions\Classes\SystemExtensionMethods.cs" />
     <Compile Include="Code\IO\Command Line Arguments\Classes\Base Classes\CommandLineArgumentBase.cs" />
     <Compile Include="Code\IO\Command Line Arguments\Classes\Base Classes\CommandLineArgumentsStructureBase.cs" />
     <Compile Include="Code\IO\Command Line Arguments\Classes\DataArgument.cs" />
@@ -54,6 +58,10 @@
     <Compile Include="Code\IO\Command Line Arguments\Interfaces\ICommandLineArgumentsStructure.cs" />
     <Compile Include="Code\IO\Command Line Arguments\Interfaces\IDataArgument.cs" />
     <Compile Include="Code\IO\Command Line Arguments\Interfaces\IOptionArgument.cs" />
+    <Compile Include="Code\IO\Serialization\Classes\BinarySerializer.cs" />
+    <Compile Include="Code\IO\Serialization\Classes\XmlSerializer.cs" />
+    <Compile Include="Code\IO\Serialization\Interfaces\IFileSerializer.cs" />
+    <Compile Include="Code\IO\Serialization\Interfaces\IStringSerializer.cs" />
     <Compile Include="Code\MOVE\Events\Classes\InstanceChangedEventArgs.cs" />
     <Compile Include="Code\MOVE\Events\Classes\OperationsNodesListChangedEventArgs.cs" />
     <Compile Include="Code\MOVE\Model\Classes\Base Classes\ModelBase.cs" />
@@ -76,11 +84,17 @@
     <Compile Include="Code\Objects\Labeled Value\Classes\LabeledInt.cs" />
     <Compile Include="Code\Objects\Labeled Value\Classes\LabeledString.cs" />
     <Compile Include="Code\Objects\Labeled Value\Interfaces\ILabeledValue.cs" />
+    <Compile Include="Code\Objects\Labeled\Classes\Base Classes\LabeledBase.cs" />
+    <Compile Include="Code\Objects\Labeled\Classes\Label.cs" />
+    <Compile Include="Code\Objects\Labeled\Interfaces\ILabel.cs" />
     <Compile Include="Code\Objects\Labeled\Interfaces\ILabeled.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Code\Objects\Labeled\Classes\" />
+    <Content Include="Software Construction Tools\ProjectPlan.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Xml\Schemas\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
