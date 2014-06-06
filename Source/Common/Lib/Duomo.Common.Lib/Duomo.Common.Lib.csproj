@@ -88,6 +88,12 @@
     <Compile Include="Code\Objects\Labeled\Classes\Label.cs" />
     <Compile Include="Code\Objects\Labeled\Interfaces\ILabel.cs" />
     <Compile Include="Code\Objects\Labeled\Interfaces\ILabeled.cs" />
+    <Compile Include="Code\Yahoo\DataRequest.cs" />
+    <Compile Include="Code\Yahoo\Periodicity.cs" />
+    <Compile Include="Code\Yahoo\Script Functions\GetYahooHistoricalData.cs" />
+    <Compile Include="Code\Yahoo\WebRequestor.cs" />
+    <Compile Include="Code\Yahoo\Yahoo Historical Data Table\YahooHistoricalDataTable.cs" />
+    <Compile Include="Code\Yahoo\Yahoo Historical Data Table\YahooHistoricalDataTableRow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
