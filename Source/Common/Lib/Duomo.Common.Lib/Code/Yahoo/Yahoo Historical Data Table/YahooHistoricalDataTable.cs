@@ -4,8 +4,10 @@ using System.Collections.Generic;
 
 namespace Duomo.Common.Lib.Yahoo
 {
+    [Serializable]
     public class YahooHistoricalDataTable
     {
+        public string Ticker { get; protected set; }
         public List<YahooHistoricalDataTableRow> Rows { get; protected set; }
 
 
@@ -14,8 +16,10 @@ namespace Duomo.Common.Lib.Yahoo
             Rows = new List<YahooHistoricalDataTableRow>();
         }
 
-        public void ParseCsvString(string csvStr)
+        public void ParseCsvString(string ticker, string csvStr)
         {
+            this.Ticker = ticker;
+
             string[] lineSeparators = new string[] { "\n" };
             string[] tokenSeparators = new string[] { "," };
 

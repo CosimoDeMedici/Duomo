@@ -5,7 +5,7 @@ using System.Security;
 
 namespace Duomo.Common.Lib
 {
-    public class DuomoWrongTypeException : DuomoException, ISerializable
+    public class WrongTypeException : DuomoException, ISerializable
     {
         #region ISerializable Members
 
@@ -58,50 +58,51 @@ namespace Duomo.Common.Lib
         }
 
 
-        DuomoWrongTypeException()
+        WrongTypeException()
             : base()
         {
         }
 
-        DuomoWrongTypeException(string message)
+        WrongTypeException(string message)
             : base(message)
         {
         }
 
-        DuomoWrongTypeException(string message, Exception innerException)
+        WrongTypeException(string message, Exception innerException)
             : base(message, innerException)
         {
         }
 
-        protected DuomoWrongTypeException(SerializationInfo info, StreamingContext context)
-            : base(info, context)
-        {
-            RequiredType = (Type)info.GetValue("RequiredType", typeof(Type));
-            FoundType = (Type)info.GetValue("FoundType", typeof(Type));
-        }
-
-        public DuomoWrongTypeException(Type requiredType, object foundObject)
+        public WrongTypeException(Type requiredType, object foundObject)
             : base(FormatMessage(requiredType, foundObject.GetType()))
         {
             Setup(requiredType, foundObject.GetType());
         }
 
-        public DuomoWrongTypeException(Type requiredType, object foundObject, Exception innerException)
+        public WrongTypeException(Type requiredType, object foundObject, Exception innerException)
             : base(FormatMessage(requiredType, foundObject.GetType()), innerException)
         {
             Setup(requiredType, foundObject.GetType());
         }
 
-        public DuomoWrongTypeException(Type requiredType, Type foundType)
+        public WrongTypeException(Type requiredType, Type foundType)
             : base(FormatMessage(requiredType, foundType))
         {
             Setup(requiredType, foundType);
         }
 
-        public DuomoWrongTypeException(Type requiredType, Type foundType, Exception innerException)
+        public WrongTypeException(Type requiredType, Type foundType, Exception innerException)
             : base(FormatMessage(requiredType, foundType), innerException)
         {
             Setup(requiredType, foundType);
+        }
+
+        [SecuritySafeCritical]
+        protected WrongTypeException(SerializationInfo info, StreamingContext context)
+            : base(info, context)
+        {
+            this.RequiredType = (Type)info.GetValue("RequiredType", typeof(Type));
+            this.FoundType = (Type)info.GetValue("FoundType", typeof(Type));
         }
 
         private void Setup(Type requiredType, Type foundType)

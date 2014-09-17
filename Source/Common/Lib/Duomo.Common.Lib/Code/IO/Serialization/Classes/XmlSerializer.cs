@@ -7,24 +7,24 @@ namespace Duomo.Common.Lib.IO.Serialization
 {
     public class XmlSerializer<T> : IFileSerializer<T>, IStringSerializer<T>
     {
-        #region IFileSerializer<T> Members
+        #region Static
 
-        public void SerializeToRootedPath(T value, string rootedPath)
+        public static void StaticSerializeToRootedPath(T value, string fileRootedPath)
         {
             XmlSerializer xmlFormatter = new XmlSerializer(typeof(T));
 
-            using (Stream fileStream = new FileStream(rootedPath, FileMode.Open))
+            using (Stream fileStream = new FileStream(fileRootedPath, FileMode.Open))
             {
                 xmlFormatter.Serialize(fileStream, value);
             }
         }
 
-        public T DeserializatFromRootedPath(string rootedPath)
+        public static T StaticDeserializatFromRootedPath(string fileRootedPath)
         {
             XmlSerializer xmlFormatter = new XmlSerializer(typeof(T));
 
             T retValue;
-            using (Stream fileStream = new FileStream(rootedPath, FileMode.Open))
+            using (Stream fileStream = new FileStream(fileRootedPath, FileMode.Open))
             {
                 retValue = (T)xmlFormatter.Deserialize(fileStream);
             }
@@ -32,11 +32,7 @@ namespace Duomo.Common.Lib.IO.Serialization
             return retValue;
         }
 
-        #endregion
-
-        #region IStringSerializer<T> Members
-
-        public string SerializeToString(T value)
+        public static string StaticSerializeToString(T value)
         {
             XmlSerializer xmlFormatter = new XmlSerializer(typeof(T));
 
@@ -46,7 +42,7 @@ namespace Duomo.Common.Lib.IO.Serialization
             return writer.ToString();
         }
 
-        public T DeserializeFromString(string xml)
+        public static T StaticDeserializeFromString(string xml)
         {
             XmlSerializer xmlFormatter = new XmlSerializer(typeof(T));
 
@@ -55,8 +51,36 @@ namespace Duomo.Common.Lib.IO.Serialization
             {
                 retValue = (T)xmlFormatter.Deserialize(stream);
             }
-            
+
             return retValue;
+        }
+
+        #endregion
+
+        #region IFileSerializer<T> Members
+
+        public void SerializeToRootedPath(T value, string fileRootedPath)
+        {
+            XmlSerializer<T>.StaticSerializeToRootedPath(value, fileRootedPath);
+        }
+
+        public T DeserializatFromRootedPath(string fileRootedPath)
+        {
+            return XmlSerializer<T>.StaticDeserializatFromRootedPath(fileRootedPath);
+        }
+
+        #endregion
+
+        #region IStringSerializer<T> Members
+
+        public string SerializeToString(T value)
+        {
+            return XmlSerializer<T>.StaticSerializeToString(value);
+        }
+
+        public T DeserializeFromString(string xml)
+        {
+            return XmlSerializer<T>.StaticDeserializeFromString(xml);
         }
 
         #endregion

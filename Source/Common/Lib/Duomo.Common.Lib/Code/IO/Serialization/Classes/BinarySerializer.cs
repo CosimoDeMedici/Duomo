@@ -7,9 +7,9 @@ namespace Duomo.Common.Lib.IO.Serialization
 {
     public class BinarySerializer<T> : IFileSerializer<T>
     {
-        #region IFileSerializer<T> Members
+        #region Static
 
-        public void SerializeToRootedPath(T value, string rootedPath)
+        public static void StaticSerializeToRootedPath(T value, string rootedPath)
         {
             BinaryFormatter binaryFormatter = new BinaryFormatter();
 
@@ -19,7 +19,7 @@ namespace Duomo.Common.Lib.IO.Serialization
             }
         }
 
-        public T DeserializatFromRootedPath(string rootedPath)
+        public static T StaticDeserializatFromRootedPath(string rootedPath)
         {
             BinaryFormatter binaryFormatter = new BinaryFormatter();
 
@@ -28,6 +28,22 @@ namespace Duomo.Common.Lib.IO.Serialization
             {
                 retValue = (T)binaryFormatter.Deserialize(fileStream);
             }
+
+            return retValue;
+        }
+
+        #endregion
+
+        #region IFileSerializer<T> Members
+
+        public void SerializeToRootedPath(T value, string rootedPath)
+        {
+            BinarySerializer<T>.StaticSerializeToRootedPath(value, rootedPath);
+        }
+
+        public T DeserializatFromRootedPath(string rootedPath)
+        {
+            T retValue = BinarySerializer<T>.StaticDeserializatFromRootedPath(rootedPath);
 
             return retValue;
         }

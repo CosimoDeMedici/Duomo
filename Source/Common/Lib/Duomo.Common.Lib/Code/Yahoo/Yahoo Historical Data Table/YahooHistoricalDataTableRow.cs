@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 namespace Duomo.Common.Lib.Yahoo
 {
+    [Serializable]
     public class YahooHistoricalDataTableRow
     {
         public DateTime Date { get; set; }
@@ -39,6 +40,20 @@ namespace Duomo.Common.Lib.Yahoo
             {
                 throw new ArgumentException(String.Format("Problem with token {0}: '{1}'.", counter, tokens[counter]), ex);
             }
+        }
+
+        public override string ToString()
+        {
+            string retValue = String.Format("{0,8:yyyyMMdd},{1,7:0.00},{2,7:0.00},{3,7:0.00},{4,7:0.00},{5,10},{6,7:0.00}",
+                this.Date,
+                this.Open,
+                this.High,
+                this.Low,
+                this.Close,
+                this.Volume,
+                this.AdjustedClose);
+
+            return retValue;
         }
     }
 }

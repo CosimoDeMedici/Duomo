@@ -63,7 +63,24 @@ Objects needed:
 3) A switchboard that takes in messages, parses out the routing info, then sends the message on its way!
 
 
+*** Model Infrastructure ***
+
+A model could be:
+	* Nothing, just an object implementing IModel.
+	* A configured model.
+	* A logged model.
+	* A serialized model.
+
+
 *** Overall Framework ***
 
 I want to build little tools (reports, analyses) that can be run daily by the Scheduler. These reports should also be included in the assemblies for CShell.
 The main interface to the desk infrastructure should be CShell. The CShell should be able to put commands in over the message bus.
+
+
+*** Source code, assembly and namespace layout ***
+
+
+
+Duomo.Common.Lib
+Duomo.Common.Lib.MATLAB

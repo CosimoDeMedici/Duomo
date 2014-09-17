@@ -34,6 +34,9 @@
     <Reference Include="log4net">
       <HintPath>..\..\..\..\Lib\log4net\1.2.13\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,10 +48,9 @@
   <ItemGroup>
     <Compile Include="Code\Enumerations\AddedOrRemovedEnumeration.cs" />
     <Compile Include="Code\Enumerations\RunStatusEnumeration.cs" />
-    <Compile Include="Code\Exceptions\Classes\DuomoArgumentException.cs" />
-    <Compile Include="Code\Exceptions\Classes\DuomoNullArgumentException.cs" />
-    <Compile Include="Code\Exceptions\Classes\DuomoWrongTypeException.cs" />
     <Compile Include="Code\Exceptions\Classes\DuomoException.cs" />
+    <Compile Include="Code\Exceptions\Classes\EnumerationValueUnhandledException.cs" />
+    <Compile Include="Code\Exceptions\Classes\WrongTypeException.cs" />
     <Compile Include="Code\Extensions\Classes\SystemExtensionMethods.cs" />
     <Compile Include="Code\IO\Command Line Arguments\Classes\Base Classes\CommandLineArgumentBase.cs" />
     <Compile Include="Code\IO\Command Line Arguments\Classes\Base Classes\CommandLineArgumentsStructureBase.cs" />
@@ -60,6 +62,7 @@
     <Compile Include="Code\IO\Command Line Arguments\Interfaces\IOptionArgument.cs" />
     <Compile Include="Code\IO\Serialization\Classes\BinarySerializer.cs" />
     <Compile Include="Code\IO\Serialization\Classes\XmlSerializer.cs" />
+    <Compile Include="Code\IO\Serialization\Interfaces\IExcelFileSerializer.cs" />
     <Compile Include="Code\IO\Serialization\Interfaces\IFileSerializer.cs" />
     <Compile Include="Code\IO\Serialization\Interfaces\IStringSerializer.cs" />
     <Compile Include="Code\MOVE\Events\Classes\InstanceChangedEventArgs.cs" />
@@ -88,6 +91,12 @@
     <Compile Include="Code\Objects\Labeled\Classes\Label.cs" />
     <Compile Include="Code\Objects\Labeled\Interfaces\ILabel.cs" />
     <Compile Include="Code\Objects\Labeled\Interfaces\ILabeled.cs" />
+    <Compile Include="Code\Office\Classes\Missing.cs" />
+    <Compile Include="Code\Office\Excel\Classes\Excel.cs" />
+    <Compile Include="Code\Office\Excel\Classes\Range.cs" />
+    <Compile Include="Code\Office\Excel\Classes\Workbook.cs" />
+    <Compile Include="Code\Office\Excel\Classes\Worksheet.cs" />
+    <Compile Include="Code\Services\Excel\Classes\ExcelService.cs" />
     <Compile Include="Code\Yahoo\DataRequest.cs" />
     <Compile Include="Code\Yahoo\Periodicity.cs" />
     <Compile Include="Code\Yahoo\Script Functions\GetYahooHistoricalData.cs" />

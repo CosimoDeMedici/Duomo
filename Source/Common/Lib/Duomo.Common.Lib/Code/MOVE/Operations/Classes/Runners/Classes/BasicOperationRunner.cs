@@ -12,7 +12,7 @@ namespace Duomo.Common.Lib.MOVE
             IOperation operation = operationNode as IOperation;
             if (null == operation)
             {
-                throw new DuomoWrongTypeException(typeof(IOperation), operationNode);
+                throw new WrongTypeException(typeof(IOperation), operationNode);
             }
 
             IRun retValue = new Run(operationNode, modelHolder, RunStatusEnumeration.Waiting);

@@ -14,7 +14,7 @@ namespace Duomo.Common.Lib.MOVE
             IOperationPipeline pipeline = operationNode as IOperationPipeline;
             if (null == pipeline)
             {
-                throw new DuomoWrongTypeException(typeof(IOperationPipeline), operationNode);
+                throw new WrongTypeException(typeof(IOperationPipeline), operationNode);
             }
 
             IRun retValue = new Run(operationNode, modelHolder, RunStatusEnumeration.Waiting);
