@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<JobRunFileRoot xmlns="urn:JobRunTypes">
+  <ID>1</ID>
+  <SystemProcessCall Name="Hello World" Description="Extremely basis test executable." Value="C:\temp\temp.exe"/>
+  <StartDateTime>01/01/9999 00:00:00</StartDateTime>
+  <EndDateTime>01/01/1900 00:00:00</EndDateTime>
+</JobRunFileRoot>

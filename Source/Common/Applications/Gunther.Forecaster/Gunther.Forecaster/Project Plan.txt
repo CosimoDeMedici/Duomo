@@ -1,0 +1,5 @@
+﻿The Gunther project is a scheduler, and the Gunther.Forecaster project is a meant to create a forecast of a time period's activity.
+
+I'll need:
+	1. The IDateOperationsProvider.
+	2. The IScheduledJobsListSource.

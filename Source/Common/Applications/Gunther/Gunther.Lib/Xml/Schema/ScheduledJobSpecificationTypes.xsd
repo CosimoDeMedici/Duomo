@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ScheduledJobSpecificationTypes"
+           elementFormDefault="qualified"
+           targetNamespace="urn:ScheduledJobSpecificationTypes"
+           xmlns="urn:ScheduledJobSpecificationTypes"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:sst="urn:ScheduleSpecificationTypes"
+           xmlns:jst="urn:JobSpecificationTypes">
+  <xs:import namespace="urn:ScheduleSpecificationTypes" schemaLocation="ScheduleSpecificationTypes.xsd"/>
+  <xs:import namespace="urn:JobSpecificationTypes" schemaLocation="JobSpecificationTypes.xsd"/>
+
+  <!--xsd.exe "C:\Code\DEV\Duomo\Source\Common\Applications\Gunther\Gunther.Lib\Xml\Schema\ScheduleSpecificationTypes.xsd" "C:\Code\DEV\Duomo\Source\Common\Applications\Gunther\Gunther.Lib\Xml\Schema\JobSpecificationTypes.xsd" "C:\Code\DEV\Duomo\Source\Common\Applications\Gunther\Gunther.Lib\Xml\Schema\ScheduledJobSpecificationTypes.xsd" /c /out:C:\temp-->
+
+  <xs:element name="ScheduledJobSpecificationListRoot" type="ScheduledJobSpecificationList"/>
+  
+  <xs:complexType name="ScheduledJobSpecificationList">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="ScheduledJob" type="ScheduledJobSpecification"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="ScheduledJobSpecification">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element name="SystemProcessCall" type="jst:SystemProcessCall"/>
+        <xs:element name="ExecutorTask" type="jst:ExecutorTask"/>
+      </xs:choice>
+      <xs:choice>
+        <xs:element type="sst:DailyScheduleSpecification" name="DailyScheduleSpecification"/>
+        <xs:element type="sst:HourlyScheduleSpecification" name="HourlyScheduleSpecification"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

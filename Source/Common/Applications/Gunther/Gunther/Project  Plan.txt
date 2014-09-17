@@ -1,0 +1,25 @@
+﻿The Gunther project is a scheduler, made primarily to run executable files at certain times.
+
+The scheduler should be able to be a stand-alone GUI program that will:
+	1. Display its schedule in a grid.
+	2. Allow a selected item in that schedule to be run by clicking a button.
+	3. Allow the "current time" of the scheduler to be changed.
+	4. Display the actual time and the current time.
+	5. Allow a different scheduled jobs source to be selected (file selector, or database).
+
+The scheduler should be able to be a command-line program that will display the schedule.
+
+The scheduler should be able to be a component in an app network, with it's information available via channel requests on the network.
+
+MOVE:
+Model:
+	IScheduledJobsListSource
+	IDateOperationsProvider
+	IJobsRepository
+	List of ScheduledTimeSpecifications
+
+Operations:
+	Get initial list of jobs and schedule each.
+	Set the timer for the next job.
+	For each job, if past due, reschedule, and add to IJobsRepository.
+	Change the current time, re-evaluate each job for new scheduling.

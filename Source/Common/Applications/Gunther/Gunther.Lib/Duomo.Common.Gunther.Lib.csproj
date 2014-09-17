@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{298241DD-92E1-4921-8C93-A22EE13BDEB0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Duomo.Common.Gunther.Lib</RootNamespace>
+    <AssemblyName>Duomo.Common.Gunther.Lib</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Code\Classes\CommonTypes.cs" />
+    <Compile Include="Code\Holiday Calendars\Classes\NoHolidaysCalendar.cs" />
+    <Compile Include="Code\Holiday Calendars\Classes\USDHolidayCalendar.cs" />
+    <Compile Include="Code\Holiday Calendars\HolidayCalendarFactory.cs" />
+    <Compile Include="Code\Date Operation Providers\Classes\BasicDateOperationProvider.cs" />
+    <Compile Include="Code\Date Operation Providers\Interfaces\IDateOperationsProvider.cs" />
+    <Compile Include="Code\Holiday Calendars\Classes\WeekendHolidayCalendar.cs" />
+    <Compile Include="Code\Holiday Calendars\Interfaces\IHolidayCalendar.cs" />
+    <Compile Include="Code\Job Repositories\Classes\BasicJobRepository.cs" />
+    <Compile Include="Code\Job Repositories\Classes\FileJobRepository.cs" />
+    <Compile Include="Code\Job Run\Classes\JobRun.cs" />
+    <Compile Include="Code\Job Specification Types\Classes\Base Classes\JobBase.cs" />
+    <Compile Include="Code\Job Specification Types\Classes\SystemProcessCall.cs" />
+    <Compile Include="Code\Job Specification Types\Interfaces\IJobSpecification.cs" />
+    <Compile Include="Code\MOVE\Model\Classes\ScheduledTimeSpecification.cs" />
+    <Compile Include="Code\MOVE\Model\GuntherModel.cs" />
+    <Compile Include="Code\Schedule Specification Types\Classes\DailyScheduleSpecification.cs" />
+    <Compile Include="Code\Job Repositories\Interfaces\IScheduledJobRepository.cs" />
+    <Compile Include="Code\Scheduled Job Specification Types\Classes\ScheduledJobSpecification.cs" />
+    <Compile Include="Code\Scheduled Job Specification Types\ScheduledJobSpecificationTypes.cs" />
+    <Compile Include="Code\Enumerations\HolidayCalendarEnumeration.cs" />
+    <Compile Include="Code\Job Specification Types\JobSpecificationTypes.cs" />
+    <Compile Include="Code\Classes\DaysOfWeekGrid.cs" />
+    <Compile Include="Code\Classes\ScheduleOperations.cs" />
+    <Compile Include="Code\Schedule Specification Types\Interfaces\IScheduleSpecification.cs" />
+    <Compile Include="Code\Schedule Specification Types\ScheduleSpecificationTypes.cs" />
+    <Compile Include="Code\Scheduled Job Specification Types\Interfaces\IScheduledJobSpecification.cs" />
+    <Compile Include="Code\Scheduled Job Specifications List Source\Classes\DummyScheduledJobListSource.cs" />
+    <Compile Include="Code\Scheduled Job Specifications List Source\Interfaces\IScheduledJobSpecificationsListSource.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Lib\Duomo.Common.Lib\Duomo.Common.Lib.csproj">
+      <Project>{8ACA8572-2814-492E-B4F8-FC9DAE6B0B44}</Project>
+      <Name>Duomo.Common.Lib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Xml\Schema\JobRunTypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Xml\Schema\JobSpecificationTypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Xml\Schema\ScheduledJobSpecificationTypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Xml\Schema\ScheduleSpecificationTypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Xml\Test.xml" />
+    <Content Include="Xml\TestJobRunFile.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

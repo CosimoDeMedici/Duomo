@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="JobSpecificationTypes"
+           elementFormDefault="qualified"
+           targetNamespace="urn:JobSpecificationTypes"
+           xmlns="urn:JobSpecificationTypes"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!--xsd.exe "C:\Code\DEV\Duomo\Source\Common\Applications\Gunther\Gunther.Lib\Xml\Schema\JobSpecificationTypes.xsd" /c /out:C:\temp-->
+
+  <!--NOTE: will not compile without a root node. These types should be incorporated into the ScheduledJobSpecificationTypes.-->
+  <!--<xs:element name="JobSpecificationRoot" type="JobSpecificationList"/>
+
+  <xs:complexType name="JobSpecificationList">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:choice>
+        <xs:element name="SystemProcessCall" type="SystemProcessCall"/>
+        <xs:element name="ExecutorTask" type="ExecutorTask"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>-->
+
+  <xs:complexType name="InputArgument">
+    <xs:attribute name="Value" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="InputArgumentsList">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="InputArgument" type="InputArgument"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="JobBase">
+    <xs:attribute name="Name" type="xs:string" use="optional"/>
+    <xs:attribute name="Description" type="xs:string" use="optional"/>
+  </xs:complexType>
+
+  <xs:complexType name="SystemProcessCall">
+    <xs:complexContent>
+      <xs:extension base="JobBase">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element name="InputArguments" type="InputArgumentsList"/>
+        </xs:sequence>
+        <xs:attribute name="Value" type="xs:string" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ExecutorTask">
+    <xs:complexContent>
+      <xs:extension base="JobBase">
+        <xs:sequence>
+          <xs:element name="AssemblyFileRootedPath" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+</xs:schema>

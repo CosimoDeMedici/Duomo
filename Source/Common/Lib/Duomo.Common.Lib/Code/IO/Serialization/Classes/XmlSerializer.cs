@@ -9,22 +9,22 @@ namespace Duomo.Common.Lib.IO.Serialization
     {
         #region Static
 
-        public static void StaticSerializeToRootedPath(T value, string fileRootedPath)
+        public static void StaticSerializeToRootedPath(T value, string rootedPath)
         {
             XmlSerializer xmlFormatter = new XmlSerializer(typeof(T));
 
-            using (Stream fileStream = new FileStream(fileRootedPath, FileMode.Open))
+            using (Stream fileStream = new FileStream(rootedPath, FileMode.Create))
             {
                 xmlFormatter.Serialize(fileStream, value);
             }
         }
 
-        public static T StaticDeserializatFromRootedPath(string fileRootedPath)
+        public static T StaticDeserializeFromRootedPath(string rootedPath)
         {
             XmlSerializer xmlFormatter = new XmlSerializer(typeof(T));
 
             T retValue;
-            using (Stream fileStream = new FileStream(fileRootedPath, FileMode.Open))
+            using (Stream fileStream = new FileStream(rootedPath, FileMode.Open))
             {
                 retValue = (T)xmlFormatter.Deserialize(fileStream);
             }
@@ -51,7 +51,7 @@ namespace Duomo.Common.Lib.IO.Serialization
             {
                 retValue = (T)xmlFormatter.Deserialize(stream);
             }
-
+            
             return retValue;
         }
 

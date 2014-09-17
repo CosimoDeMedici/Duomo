@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="JobRunTypes"
+           elementFormDefault="qualified"
+           targetNamespace="urn:JobRunTypes"
+           xmlns="urn:JobRunTypes"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:jst="urn:JobSpecificationTypes">
+  <xs:import namespace="urn:JobSpecificationTypes" schemaLocation="JobSpecificationTypes.xsd"/>
+
+  <!--xsd.exe "C:\Code\DEV\Duomo\Source\Common\Applications\Gunther\Gunther.Lib\Xml\Schema\JobSpecificationTypes.xsd" "C:\Code\DEV\Duomo\Source\Common\Applications\Gunther\Gunther.Lib\Xml\Schema\JobRunTypes.xsd" /c /out:C:\temp-->
+
+  <xs:element name="JobRunFileRoot" type="JobRun"/>
+  
+  <xs:complexType name="JobRun">
+    <xs:sequence>
+      <xs:element name="ID" type="xs:int"/>
+      <xs:choice>
+        <xs:element name="SystemProcessCall" type="jst:SystemProcessCall"/>
+        <xs:element name="ExecutorTask" type="jst:ExecutorTask"/>
+      </xs:choice>
+      <xs:element name="StartDateTime" type="xs:dateTime"/>
+      <xs:element name="EndDateTime" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

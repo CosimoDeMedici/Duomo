@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ScheduledJobSpecificationListRoot xmlns="urn:ScheduledJobSpecificationTypes">
+  <ScheduledJob>
+    <SystemProcessCall Name="Hello World" Description="Extremely basis test executable." Value="C:\temp\temp.exe"/>
+    <DailyScheduleSpecification Time="07:00:00" DaysOfWeek="MTWTFSS" HolidayCalendar="NONE"/>
+  </ScheduledJob>
+</ScheduledJobSpecificationListRoot>
