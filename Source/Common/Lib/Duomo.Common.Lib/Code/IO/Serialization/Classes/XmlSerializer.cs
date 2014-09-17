@@ -66,7 +66,7 @@ namespace Duomo.Common.Lib.IO.Serialization
 
         public T DeserializatFromRootedPath(string fileRootedPath)
         {
-            return XmlSerializer<T>.StaticDeserializatFromRootedPath(fileRootedPath);
+            return XmlSerializer<T>.StaticDeserializeFromRootedPath(fileRootedPath);
         }
 
         #endregion

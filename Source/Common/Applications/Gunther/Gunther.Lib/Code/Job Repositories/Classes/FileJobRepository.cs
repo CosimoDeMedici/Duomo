@@ -32,8 +32,6 @@ namespace Duomo.Common.Gunther.Lib
             this.MaximumJobNumberFileRootedPath = Path.Combine(this.RootFolderRootedPath, "MaximumJobNumber.txt");
             this.JobsTODOFolderRootedPath = Path.Combine(this.RootFolderRootedPath, "JobsTODO");
             this.JobsFolderRootedPath = Path.Combine(this.RootFolderRootedPath, "Jobs");
-
-            TextFile
         }
     }
 }
