@@ -9,7 +9,7 @@ namespace Duomo.Common.Lib.IO.Serialization
     {
         #region Static
 
-        public static void StaticSerializeToRootedPath(T value, string rootedPath)
+        public static void SerializeToRootedPath(T value, string rootedPath)
         {
             XmlSerializer xmlFormatter = new XmlSerializer(typeof(T));
 
@@ -19,7 +19,7 @@ namespace Duomo.Common.Lib.IO.Serialization
             }
         }
 
-        public static T StaticDeserializeFromRootedPath(string rootedPath)
+        public static T DeserializeFromRootedPath(string rootedPath)
         {
             XmlSerializer xmlFormatter = new XmlSerializer(typeof(T));
 
@@ -32,7 +32,7 @@ namespace Duomo.Common.Lib.IO.Serialization
             return retValue;
         }
 
-        public static string StaticSerializeToString(T value)
+        public static string SerializeToString(T value)
         {
             XmlSerializer xmlFormatter = new XmlSerializer(typeof(T));
 
@@ -42,7 +42,7 @@ namespace Duomo.Common.Lib.IO.Serialization
             return writer.ToString();
         }
 
-        public static T StaticDeserializeFromString(string xml)
+        public static T DeserializeFromString(string xml)
         {
             XmlSerializer xmlFormatter = new XmlSerializer(typeof(T));
 
@@ -59,28 +59,31 @@ namespace Duomo.Common.Lib.IO.Serialization
 
         #region IFileSerializer<T> Members
 
-        public void SerializeToRootedPath(T value, string fileRootedPath)
+        public void SerializeToRootedPathInstance(T value, string fileRootedPath)
         {
-            XmlSerializer<T>.StaticSerializeToRootedPath(value, fileRootedPath);
+            XmlSerializer<T>.SerializeToRootedPath(value, fileRootedPath);
         }
 
-        public T DeserializatFromRootedPath(string fileRootedPath)
+        public T DeserializatFromRootedPathInstance(string fileRootedPath)
         {
-            return XmlSerializer<T>.StaticDeserializeFromRootedPath(fileRootedPath);
+            T retValue = XmlSerializer<T>.DeserializeFromRootedPath(fileRootedPath);
+            return retValue;
         }
 
         #endregion
 
         #region IStringSerializer<T> Members
 
-        public string SerializeToString(T value)
+        public string SerializeToStringInstance(T value)
         {
-            return XmlSerializer<T>.StaticSerializeToString(value);
+            string retValue = XmlSerializer<T>.SerializeToString(value);
+            return retValue;
         }
 
-        public T DeserializeFromString(string xml)
+        public T DeserializeFromStringInstance(string xml)
         {
-            return XmlSerializer<T>.StaticDeserializeFromString(xml);
+            T retValue = XmlSerializer<T>.DeserializeFromString(xml);
+            return retValue;
         }
 
         #endregion
