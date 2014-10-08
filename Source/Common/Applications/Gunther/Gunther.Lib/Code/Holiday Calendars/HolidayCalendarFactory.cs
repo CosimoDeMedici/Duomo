@@ -5,7 +5,7 @@ namespace Duomo.Common.Gunther.Lib
 {
     public static class HolidayCalendarFactory
     {
-        public static IHolidayCalendar GetHolidayCalendar(HolidayCalendarEnumeration holidayCalendar)
+        public static IHolidayCalendar Create(HolidayCalendarEnumeration holidayCalendar)
         {
             IHolidayCalendar retValue = null;
 
@@ -17,6 +17,10 @@ namespace Duomo.Common.Gunther.Lib
 
                 case HolidayCalendarEnumeration.WKN:
                     retValue = new WeekendHolidayCalendar();
+                    break;
+
+                case HolidayCalendarEnumeration.USD:
+                    retValue = new USDHolidayCalendar();
                     break;
 
                 default:

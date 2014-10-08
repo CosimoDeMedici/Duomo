@@ -54,6 +54,7 @@
     <Compile Include="Code\Job Specification Types\Classes\Base Classes\JobBase.cs" />
     <Compile Include="Code\Job Specification Types\Classes\SystemProcessCall.cs" />
     <Compile Include="Code\Job Specification Types\Interfaces\IJobSpecification.cs" />
+    <Compile Include="Code\MOVE\Events\ScheduledTimeSpecificationListChangedEventArgs.cs" />
     <Compile Include="Code\MOVE\Model\Classes\ScheduledTimeSpecification.cs" />
     <Compile Include="Code\MOVE\Model\GuntherModel.cs" />
     <Compile Include="Code\Schedule Specification Types\Classes\DailyScheduleSpecification.cs" />
@@ -67,7 +68,8 @@
     <Compile Include="Code\Schedule Specification Types\Interfaces\IScheduleSpecification.cs" />
     <Compile Include="Code\Schedule Specification Types\ScheduleSpecificationTypes.cs" />
     <Compile Include="Code\Scheduled Job Specification Types\Interfaces\IScheduledJobSpecification.cs" />
-    <Compile Include="Code\Scheduled Job Specifications List Source\Classes\DummyScheduledJobListSource.cs" />
+    <Compile Include="Code\Scheduled Job Specifications List Source\Classes\DummyScheduledJobSpecificationsListSource.cs" />
+    <Compile Include="Code\Scheduled Job Specifications List Source\Classes\XmlFileScheduledJobSpecificationsListSource.cs" />
     <Compile Include="Code\Scheduled Job Specifications List Source\Interfaces\IScheduledJobSpecificationsListSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

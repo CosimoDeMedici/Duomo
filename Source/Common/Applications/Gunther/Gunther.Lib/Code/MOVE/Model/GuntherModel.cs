@@ -7,8 +7,13 @@ namespace Duomo.Common.Gunther.Lib
 {
     public class GuntherModel
     {
+        public event ScheduledTimeSpecificationListChanged ScheduledTimeSpecificationRemoved;
+        public event ScheduledTimeSpecificationListChanged ScheduledTimeSpecificationAdded;
+
+
         public List<ScheduledTimeSpecification> ScheduledTimes { get; protected set; }
         public IDateOperationsProvider DateOperationsProvider { get; set; }
+        public IScheduledJobSpecificationsListSource ScheduledJobsListSource { get; set; }
         public IJobRepository JobRepository { get; set; }
         private Timer Timer { get; set; }
 
@@ -18,25 +23,60 @@ namespace Duomo.Common.Gunther.Lib
             this.ScheduledTimes = new List<ScheduledTimeSpecification>();
         }
 
-        public void AddScheduledJobs(List<IScheduledJobSpecification> scheduledJobSpecifications)
+        public void AddScheduledJobs()
         {
-            foreach (IScheduledJobSpecification scheduledJobSpec in scheduledJobSpecifications)
+            int numScheduledTimes = this.ScheduledTimes.Count;
+            for (int iScheduledTimeSpec = 0; iScheduledTimeSpec < numScheduledTimes; iScheduledTimeSpec++)
+            {
+                this.RemoveScheduledTimeSpecificationAt(0);
+            }
+
+            DateTime startTime = DateTime.Now;
+
+            foreach (IScheduledJobSpecification scheduledJobSpec in this.ScheduledJobsListSource.ScheduledJobs)
             {
                 ScheduledTimeSpecification curTimeSpec = new ScheduledTimeSpecification();
                 curTimeSpec.ScheduledJob = scheduledJobSpec;
+                curTimeSpec.ScheduledTime = curTimeSpec.ScheduledJob.ScheduleSpecification.CalculateNextScheduledTime(startTime, this.DateOperationsProvider);
 
-                this.ScheduledTimes.Add(curTimeSpec);
+                this.AddScheduledTimeSpecification(curTimeSpec);
+            }
+        }
+
+        private void AddScheduledTimeSpecification(ScheduledTimeSpecification scheduledTimeSpecification)
+        {
+            this.ScheduledTimes.Add(scheduledTimeSpecification);
+
+            this.OnScheduledTimeAdded(scheduledTimeSpecification);
+        }
+
+        private void OnScheduledTimeAdded(ScheduledTimeSpecification scheduledTimeSpecification)
+        {
+            if (null != this.ScheduledTimeSpecificationAdded)
+            {
+                this.ScheduledTimeSpecificationAdded(this, new ScheduledTimeSpecificationListChangedEventArgs(scheduledTimeSpecification));
+            }
+        }
+
+        private void RemoveScheduledTimeSpecificationAt(int index)
+        {
+            ScheduledTimeSpecification scheduledTimeSpecification = this.ScheduledTimes[index];
+            this.ScheduledTimes.RemoveAt(index);
+
+            this.OnScheduledTimeRemoved(scheduledTimeSpecification);
+        }
+
+        private void OnScheduledTimeRemoved(ScheduledTimeSpecification scheduledTimeSpecification)
+        {
+            if (null != this.ScheduledTimeSpecificationRemoved)
+            {
+                this.ScheduledTimeSpecificationRemoved(this, new ScheduledTimeSpecificationListChangedEventArgs(scheduledTimeSpecification));
             }
         }
 
         public void Start()
         {
-            DateTime startTime = DateTime.Now;
-
-            foreach (ScheduledTimeSpecification curScheduledTimeSpec in this.ScheduledTimes)
-            {
-                curScheduledTimeSpec.ScheduledTime = curScheduledTimeSpec.ScheduledJob.ScheduleSpecification.CalculateNextScheduledTime(startTime, this.DateOperationsProvider);
-            }
+            this.AddScheduledJobs();
 
             this.SetTimer();
         }
@@ -75,7 +115,7 @@ namespace Duomo.Common.Gunther.Lib
                 }
 
                 // Remove the first scheduled job.
-                this.ScheduledTimes.RemoveAt(0);
+                this.RemoveScheduledTimeSpecificationAt(0);
 
                 // Create the next item.
                 ScheduledTimeSpecification nextScheduledTimeSpec = new ScheduledTimeSpecification();
@@ -87,7 +127,10 @@ namespace Duomo.Common.Gunther.Lib
                 this.JobRepository.Add(curScheduledTimeSpec.ScheduledJob.JobSpecification, curScheduledTimeSpec.ScheduledTime);
             }
 
-            this.ScheduledTimes.AddRange(nextScheduledTimes);
+            foreach (ScheduledTimeSpecification scheduledTimeSpecification in nextScheduledTimes)
+            {
+                this.AddScheduledTimeSpecification(scheduledTimeSpecification);
+            }
 
             this.SetTimer();
         }

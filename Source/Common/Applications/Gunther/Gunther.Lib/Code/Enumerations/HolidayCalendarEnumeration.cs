@@ -15,7 +15,7 @@ namespace Duomo.Common.Gunther.Lib
         /// <remarks>Use for running on all (US) weekend days.</remarks>
         WKN,
 
-        /// <remarks>Includes (US) weekends and US holidays.</remarks>
+        /// <remarks>Includes US holidays. NOTE: does not include US weekends. Use USDWKN.</remarks>
         USD,
     }
 }

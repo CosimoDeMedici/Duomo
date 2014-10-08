@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using Duomo.Common.Gunther.Lib;
 
 
-namespace Gunther
+namespace Duomo.Common.Gunther
 {
     static class Program
     {
@@ -21,17 +21,10 @@ namespace Gunther
             // Should be done via configuration of the GuntherModelImodel.
             GuntherModel model = new GuntherModel();
             model.DateOperationsProvider = new BasicDateOperationProvider();
+            model.ScheduledJobsListSource = new XmlFileScheduledJobSpecificationsListSource(); //new DummyScheduledJobSpecificationsListSource();
             model.JobRepository = new BasicJobRepository();
 
-            // Should also be done via configuration, but can also be done programmatically.
-            DummyScheduledJobListSource jobsSource = new DummyScheduledJobListSource();
-            List<IScheduledJobSpecification> scheduledJobs = jobsSource.ScheduledJobs;
-            model.AddScheduledJobs(scheduledJobs);
-
-            model.Start();
-
-            // Need something for the main thread to do! Perhaps use this thread as the scheduler and use some of the Async wait methods?
-            Application.Run(new Form1());
+            Application.Run(new GuntherMainView(model, true));
         }
     }
 }

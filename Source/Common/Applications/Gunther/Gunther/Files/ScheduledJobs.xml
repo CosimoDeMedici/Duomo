@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ScheduledJobSpecificationListRoot xmlns="urn:ScheduledJobSpecificationTypes">
+  <ScheduledJob>
+    <SystemProcessCall Name="Hello World" Description="Extremely basic test executable." Value="C:\Code\DEV\Duomo\Source\Common\Applications\HelloWorld\HelloWorld\bin\Release\Duomo.Common.HelloWorld.exe"/>
+    <DailyScheduleSpecification Time="07:00:00" DaysOfWeek="MTWTFSS" HolidayCalendar="NONE"/>
+  </ScheduledJob>
+  <ScheduledJob>
+    <SystemProcessCall Name="Hello World2" Description="Extremely basic test executable2." Value="C:\Code\DEV\Duomo\Source\Common\Applications\HelloWorld\HelloWorld\bin\Release\Duomo.Common.HelloWorld.exe"/>
+    <DailyScheduleSpecification Time="08:00:00" DaysOfWeek="MTWTFSS" HolidayCalendar="NONE"/>
+  </ScheduledJob>
+</ScheduledJobSpecificationListRoot>

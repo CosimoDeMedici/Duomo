@@ -5,14 +5,15 @@ namespace Duomo.Common.Gunther.Lib
 {
     public static class ScheduleOperations
     {
-        public static bool DayIsValidDayForRun(DateTime day, string daysOfWeekGrid, HolidayCalendarEnumeration holidayCalendar, IDateOperationsProvider dateOperationsProvider)
+        public static bool DayIsValidDayForRun(DateTime day, string daysOfWeekGrid, HolidayCalendarEnumeration holidayCalendarEnumeration, IDateOperationsProvider dateOperationsProvider)
         {
             // Assume false.
             bool retValue = false;
 
             if (DaysOfWeekGrid.TrueOnDayOfWeek(day.DayOfWeek, daysOfWeekGrid))
             {
-                if (dateOperationsProvider.IsBusinessDay(day, holidayCalendar))
+                IHolidayCalendar holidayCalender = HolidayCalendarFactory.Create(holidayCalendarEnumeration);
+                if (dateOperationsProvider.IsBusinessDay(day, holidayCalender))
                 {
                     retValue = true;
                 }

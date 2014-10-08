@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 
 namespace Duomo.Common.Gunther.Lib
@@ -7,14 +8,35 @@ namespace Duomo.Common.Gunther.Lib
     {
         #region IDateOperationsProvider Members
 
-        public bool IsBusinessDay(DateTime date, HolidayCalendarEnumeration holidayCalendar)
+        public bool IsBusinessDay(DateTime date, IHolidayCalendar holidayCalendar)
         {
-            IHolidayCalendar curHolidayCalendar = HolidayCalendarFactory.GetHolidayCalendar(holidayCalendar);
+            bool retValue = !holidayCalendar.IsHoliday(date);
+            return retValue;
+        }
 
-            bool retValue = !curHolidayCalendar.IsHoliday(date);
+        public bool IsBusinessDay(DateTime date, List<IHolidayCalendar> holidayCalendars)
+        {
+            bool retValue = true;
+
+            foreach (IHolidayCalendar holidayCalendar in holidayCalendars)
+            {
+                if (holidayCalendar.IsHoliday(date))
+                {
+                    retValue = false;
+                    break;
+                }
+            }
+
             return retValue;
         }
 
         #endregion
+
+
+        public BasicDateOperationProvider()
+        {
+        }
+
+        //public void AddHolidayCalendar(
     }
 }

@@ -106,7 +106,7 @@ namespace Duomo.Common.Gunther.Lib
             DateTime currentDate = lastDayOfMay;
             while (DayOfWeek.Monday != currentDate.DayOfWeek)
             {
-                currentDate.AddDays(-1);
+                currentDate = currentDate.AddDays(-1);
             }
 
             return currentDate;

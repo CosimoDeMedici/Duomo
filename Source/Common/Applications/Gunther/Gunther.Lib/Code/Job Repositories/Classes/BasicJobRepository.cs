@@ -10,7 +10,7 @@ namespace Duomo.Common.Gunther.Lib
 
         public void Add(IJobSpecification jobSpecification, DateTime scheduledTime)
         {
-            // Just run the job directly.
+            // Just run the job.
 
             SystemProcessCall call = jobSpecification as SystemProcessCall;
             if (null == call)

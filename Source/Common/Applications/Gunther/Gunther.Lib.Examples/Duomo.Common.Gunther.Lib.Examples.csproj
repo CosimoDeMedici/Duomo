@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{46B83B65-EF61-4DD7-93E8-42C22909E9D2}</ProjectGuid>
+    <ProjectGuid>{7D730591-D7F3-4D6B-8BC0-71AB9DF6D556}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Duomo.Common.Gunther</RootNamespace>
-    <AssemblyName>Duomo.Common.Gunther</AssemblyName>
+    <RootNamespace>Duomo.Common.Gunther.Lib.Examples</RootNamespace>
+    <AssemblyName>Duomo.Common.Gunther.Lib.Examples</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
@@ -47,17 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Code\GuntherMainView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Code\GuntherMainView.Designer.cs">
-      <DependentUpon>GuntherMainView.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Code\GuntherMainView.resx">
-      <DependentUpon>GuntherMainView.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -79,7 +70,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\..\..\Lib\Duomo.Common.Lib\Duomo.Common.Lib.csproj">
       <Project>{8ACA8572-2814-492E-B4F8-FC9DAE6B0B44}</Project>
@@ -89,15 +79,6 @@
       <Project>{298241DD-92E1-4921-8C93-A22EE13BDEB0}</Project>
       <Name>Duomo.Common.Gunther.Lib</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Files\Copy of ScheduledJobs.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Files\ScheduledJobs.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Project  Plan.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

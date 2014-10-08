@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Duomo.Common.Gunther.Lib", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Duomo.Common.Lib", "..\..\Lib\Duomo.Common.Lib\Duomo.Common.Lib.csproj", "{8ACA8572-2814-492E-B4F8-FC9DAE6B0B44}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Duomo.Common.Gunther.Lib.Examples", "Gunther.Lib.Examples\Duomo.Common.Gunther.Lib.Examples.csproj", "{7D730591-D7F3-4D6B-8BC0-71AB9DF6D556}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,16 @@ Global
 		{8ACA8572-2814-492E-B4F8-FC9DAE6B0B44}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{8ACA8572-2814-492E-B4F8-FC9DAE6B0B44}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{8ACA8572-2814-492E-B4F8-FC9DAE6B0B44}.Release|x86.ActiveCfg = Release|Any CPU
+		{7D730591-D7F3-4D6B-8BC0-71AB9DF6D556}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{7D730591-D7F3-4D6B-8BC0-71AB9DF6D556}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{7D730591-D7F3-4D6B-8BC0-71AB9DF6D556}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{7D730591-D7F3-4D6B-8BC0-71AB9DF6D556}.Debug|x86.ActiveCfg = Debug|x86
+		{7D730591-D7F3-4D6B-8BC0-71AB9DF6D556}.Debug|x86.Build.0 = Debug|x86
+		{7D730591-D7F3-4D6B-8BC0-71AB9DF6D556}.Release|Any CPU.ActiveCfg = Release|x86
+		{7D730591-D7F3-4D6B-8BC0-71AB9DF6D556}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{7D730591-D7F3-4D6B-8BC0-71AB9DF6D556}.Release|Mixed Platforms.Build.0 = Release|x86
+		{7D730591-D7F3-4D6B-8BC0-71AB9DF6D556}.Release|x86.ActiveCfg = Release|x86
+		{7D730591-D7F3-4D6B-8BC0-71AB9DF6D556}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,15 @@
-﻿The Gunther project is a scheduler, made primarily to run executable files at certain times.
+﻿Next steps:
+
+* Load the schedule from a file. Create a file-based Scheduled Job Specifications List Source.
+
+* Create a file-based Job Repository and Job Runner.
+	See the Common.Gunther.JobRepository solution for construction.
+
+* Create a GUI showing the queued jobs and that allows you to run a particular job at the touch of a button.
+
+* Rig a production job.
+
+The Gunther project is a scheduler, made primarily to run executable files at certain times.
 
 The scheduler should be able to be a stand-alone GUI program that will:
 	1. Display its schedule in a grid.
@@ -23,3 +34,12 @@ Operations:
 	Set the timer for the next job.
 	For each job, if past due, reschedule, and add to IJobsRepository.
 	Change the current time, re-evaluate each job for new scheduling.
+
+Options:
+	Run headless.
+	Load configuration from file.
+
+Configuration options:
+	Load scheduled jobs list from file rooted path, or from database. Use late-binding to get scheduled jobs list source.
+	Use jobs repository either in file or database. Use late-binding to get the jobs repository.
+	Use date operations provider, late-binding.
