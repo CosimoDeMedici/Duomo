@@ -31,8 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="log4net">
-      <HintPath>..\..\..\..\Lib\log4net\1.2.13\log4net.dll</HintPath>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Lib\Apache\log4net\1.2.13\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -61,6 +62,7 @@
     <Compile Include="Code\IO\Command Line Arguments\Interfaces\IDataArgument.cs" />
     <Compile Include="Code\IO\Command Line Arguments\Interfaces\IOptionArgument.cs" />
     <Compile Include="Code\IO\Serialization\Classes\BinarySerializer.cs" />
+    <Compile Include="Code\IO\Serialization\Classes\TextFileSerializer.cs" />
     <Compile Include="Code\IO\Serialization\Classes\XmlSerializer.cs" />
     <Compile Include="Code\IO\Serialization\Interfaces\IExcelFileSerializer.cs" />
     <Compile Include="Code\IO\Serialization\Interfaces\IFileSerializer.cs" />
@@ -82,6 +84,11 @@
     <Compile Include="Code\MOVE\Operations\Interfaces\IOperationNode.cs" />
     <Compile Include="Code\MOVE\Operations\Interfaces\IOperationPipeline.cs" />
     <Compile Include="Code\MOVE\Model\Interfaces\IRun.cs" />
+    <Compile Include="Code\MOVE\Operations\Operation Results\Classes\ExceptionedOperationResult.cs" />
+    <Compile Include="Code\MOVE\Operations\Operation Results\Classes\FunctionResult.cs" />
+    <Compile Include="Code\MOVE\Operations\Operation Results\Classes\NestedOperationResult.cs" />
+    <Compile Include="Code\MOVE\Operations\Operation Results\Classes\OperationResult.cs" />
+    <Compile Include="Code\MOVE\Operations\Operation Results\Interfaces\IOperationResult.cs" />
     <Compile Include="Code\Objects\Labeled Value\Classes\Base Classes\LabeledValueBase.cs" />
     <Compile Include="Code\Objects\Labeled Value\Classes\LabeledDouble.cs" />
     <Compile Include="Code\Objects\Labeled Value\Classes\LabeledInt.cs" />
@@ -97,6 +104,7 @@
     <Compile Include="Code\Office\Excel\Classes\Workbook.cs" />
     <Compile Include="Code\Office\Excel\Classes\Worksheet.cs" />
     <Compile Include="Code\Services\Excel\Classes\ExcelService.cs" />
+    <Compile Include="Code\Utilities.cs" />
     <Compile Include="Code\Yahoo\DataRequest.cs" />
     <Compile Include="Code\Yahoo\Periodicity.cs" />
     <Compile Include="Code\Yahoo\Script Functions\GetYahooHistoricalData.cs" />

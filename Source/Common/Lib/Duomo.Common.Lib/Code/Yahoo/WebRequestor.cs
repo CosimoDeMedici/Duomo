@@ -7,7 +7,7 @@ namespace Duomo.Common.Lib.Yahoo
 {
     public static class WebDataRequester
     {
-        public static string GetCsvResponse(string url)
+        public static string GetStringResponse(string url)
         {
             WebRequest request = WebRequest.Create(url);
             request.UseDefaultCredentials = true;

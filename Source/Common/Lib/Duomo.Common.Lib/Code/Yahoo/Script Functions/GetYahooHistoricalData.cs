@@ -15,7 +15,7 @@ namespace Duomo.Common.Lib.Yahoo
 
             string url = request.ToURL();
 
-            string csvString = WebDataRequester.GetCsvResponse(url);
+            string csvString = WebDataRequester.GetStringResponse(url);
 
             YahooHistoricalDataTable retValue = new YahooHistoricalDataTable();
             retValue.ParseCsvString(ticker, csvString);
