@@ -53,6 +53,7 @@
     <Compile Include="Code\Exceptions\Classes\EnumerationValueUnhandledException.cs" />
     <Compile Include="Code\Exceptions\Classes\WrongTypeException.cs" />
     <Compile Include="Code\Extensions\Classes\SystemExtensionMethods.cs" />
+    <Compile Include="Code\Extensions\Classes\UriExtensionMethods.cs" />
     <Compile Include="Code\IO\Command Line Arguments\Classes\Base Classes\CommandLineArgumentBase.cs" />
     <Compile Include="Code\IO\Command Line Arguments\Classes\Base Classes\CommandLineArgumentsStructureBase.cs" />
     <Compile Include="Code\IO\Command Line Arguments\Classes\DataArgument.cs" />
