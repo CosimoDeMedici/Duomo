@@ -142,6 +142,11 @@ namespace Duomo.Common.Lib.IO
 
         private int ParseDataArguments(IList<string> arguments, IList<IDataArgument> dataArguments)
         {
+            if (0 == dataArguments.Count)
+            {
+                return 0;
+            }
+
             int numDataArgumentsFound = 0;
             int iDataArgument = 0;
             foreach (string argument in arguments)

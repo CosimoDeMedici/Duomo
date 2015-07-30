@@ -47,6 +47,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Code\Dates\Date Operation Providers\Classes\BasicDateOperationProvider.cs" />
+    <Compile Include="Code\Dates\Date Operation Providers\Interfaces\IDateOperationsProvider.cs" />
+    <Compile Include="Code\Dates\Holiday Calendars\Classes\NoHolidaysCalendar.cs" />
+    <Compile Include="Code\Dates\Holiday Calendars\Classes\USDHolidayCalendar.cs" />
+    <Compile Include="Code\Dates\Holiday Calendars\Classes\WeekendHolidayCalendar.cs" />
+    <Compile Include="Code\Dates\Holiday Calendars\HolidayCalendarEnumeration.cs" />
+    <Compile Include="Code\Dates\Holiday Calendars\HolidayCalendarFactory.cs" />
+    <Compile Include="Code\Dates\Holiday Calendars\Interfaces\IHolidayCalendar.cs" />
     <Compile Include="Code\Enumerations\AddedOrRemovedEnumeration.cs" />
     <Compile Include="Code\Enumerations\RunStatusEnumeration.cs" />
     <Compile Include="Code\Exceptions\Classes\DuomoException.cs" />
@@ -106,6 +114,7 @@
     <Compile Include="Code\Office\Excel\Classes\Worksheet.cs" />
     <Compile Include="Code\Services\Excel\Classes\ExcelService.cs" />
     <Compile Include="Code\Utilities.cs" />
+    <Compile Include="Code\Xml Objects\Types.cs" />
     <Compile Include="Code\Yahoo\DataRequest.cs" />
     <Compile Include="Code\Yahoo\Periodicity.cs" />
     <Compile Include="Code\Yahoo\Script Functions\GetYahooHistoricalData.cs" />
@@ -117,8 +126,14 @@
   <ItemGroup>
     <Content Include="Software Construction Tools\ProjectPlan.txt" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Xml\Schemas\" />
+    <None Include="Xml\Schemas\Duomo.Common.Lib.Enumerations.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Xml\Schemas\Duomo.Common.Lib.Types.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
