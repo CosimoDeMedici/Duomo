@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Duomo.Common.Interfaces.Database"
+           elementFormDefault="qualified"
+           targetNamespace="urn:Duomo.Common.Interfaces.Database"
+           xmlns="urn:Duomo.Common.Interfaces.Database"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:complexType name="DatabaseInterfaceXmlType">
+    <xs:sequence>
+      <xs:element name="ServerAddress" type="xs:string"/>
+      <xs:element name="Port" type="xs:int"/>
+      <xs:element name="DatabaseName" type="xs:string"/>
+      <xs:element name="DatabaseType" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="DatabaseID" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="DatabaseInterfacesListXmlType">
+    <xs:sequence>
+      <xs:element name="DatabaseInterface" type="DatabaseInterfaceXmlType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="DatabaseInterfacesRoot" type="DatabaseInterfacesListXmlType"/>
+  
+</xs:schema>

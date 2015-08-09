@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Duomo.Common.Types.Authentications"
+           elementFormDefault="qualified"
+           targetNamespace="urn:Duomo.Common.Types.Authentications"
+           xmlns="urn:Duomo.Common.Types.Authentications"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:complexType name="AuthenticationXmlType">
+    <xs:sequence>
+      <xs:element name="UserName" type="xs:string"/>
+      <xs:element name="Password" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DatabaseAuthenticationXmlType">
+    <xs:complexContent>
+      <xs:extension base="AuthenticationXmlType">
+        <xs:attribute name="DatabaseID" type="xs:string"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="FtpAuthenticationXmlType">
+    <xs:complexContent>
+      <xs:extension base="AuthenticationXmlType">
+        <xs:attribute name="FtpServerID" type="xs:string"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="OtherAuthenticationXmlType">
+    <xs:complexContent>
+      <xs:extension base="AuthenticationXmlType">
+        <xs:attribute name="ID" type="xs:string"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="DatabaseAuthenticationsListXmlType">
+    <xs:sequence>
+      <xs:element name="DatabaseAuthentication" type="DatabaseAuthenticationXmlType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="FtpAuthenticationsListXmlType">
+    <xs:sequence>
+      <xs:element name="FtpServerAuthentication" type="FtpAuthenticationXmlType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="OtherAuthenticationsListXmlType">
+    <xs:sequence>
+      <xs:element name="Authentication" type="OtherAuthenticationXmlType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AuthenticationsXmlType">
+    <xs:sequence>
+      <xs:element name="DatabaseAuthentications" type="DatabaseAuthenticationsListXmlType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="FtpAuthentications" type="FtpAuthenticationsListXmlType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="OtherAuthentications" type="OtherAuthenticationsListXmlType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="AuthenticationsRoot" type="AuthenticationsXmlType"/>
+  
+</xs:schema>

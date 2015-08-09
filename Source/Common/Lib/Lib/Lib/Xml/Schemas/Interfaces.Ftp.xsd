@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Duomo.Common.Interfaces.Ftp"
+           elementFormDefault="qualified"
+           targetNamespace="urn:Duomo.Common.Interfaces.Ftp"
+           xmlns="urn:Duomo.Common.Interfaces.Ftp"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:complexType name="FtpInterfaceXmlType">
+    <xs:sequence>
+      <xs:element name="ServerAddress" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="FtpServerID" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="FtpInterfacesListXmlType">
+    <xs:sequence>
+      <xs:element name="FtpInterface" type="FtpInterfaceXmlType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="FtpInterfacesRoot" type="FtpInterfacesListXmlType"/>
+  
+</xs:schema>
