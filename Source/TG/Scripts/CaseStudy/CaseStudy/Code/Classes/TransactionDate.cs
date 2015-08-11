@@ -23,6 +23,35 @@ namespace TG.CaseStudy
         public static readonly DateTime Feb11 = new DateTime(2012, 02, 29);
         public static readonly DateTime Mar11 = new DateTime(2012, 03, 31);
 
+        // In-sample: 151 days - 18 days = 133.
+        public static List<DateTime> GetDatesToRemoveForRegression()
+        {
+            List<DateTime> retValue = new List<DateTime>();
+
+            retValue.Add(new DateTime(2013, 11, 1));
+            retValue.Add(new DateTime(2013, 11, 2));
+            retValue.Add(new DateTime(2013, 11, 3));
+            retValue.Add(new DateTime(2013, 11, 4));
+            retValue.Add(new DateTime(2013, 11, 5));
+            retValue.Add(new DateTime(2013, 11, 26));
+            retValue.Add(new DateTime(2013, 11, 27));
+            retValue.Add(new DateTime(2013, 11, 28));
+
+            retValue.Add(new DateTime(2013, 12, 1));
+            retValue.Add(new DateTime(2013, 12, 2));
+            retValue.Add(new DateTime(2013, 12, 3));
+            retValue.Add(new DateTime(2013, 12, 4));
+            retValue.Add(new DateTime(2013, 12, 5));
+            retValue.Add(new DateTime(2013, 12, 6));
+            retValue.Add(new DateTime(2013, 12, 13));
+            retValue.Add(new DateTime(2013, 12, 23));
+            retValue.Add(new DateTime(2013, 12, 24));
+            retValue.Add(new DateTime(2013, 12, 25));
+
+            retValue.Add(new DateTime(2014, 3, 17));
+
+            return retValue;
+        }
 
         public static List<DateTime> GetAllDatesInOrder()
         {

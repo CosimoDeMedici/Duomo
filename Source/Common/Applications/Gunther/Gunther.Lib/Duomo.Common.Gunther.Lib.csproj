@@ -41,13 +41,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Code\Classes\CommonTypes.cs" />
-    <Compile Include="Code\Holiday Calendars\Classes\NoHolidaysCalendar.cs" />
-    <Compile Include="Code\Holiday Calendars\Classes\USDHolidayCalendar.cs" />
-    <Compile Include="Code\Holiday Calendars\HolidayCalendarFactory.cs" />
-    <Compile Include="Code\Date Operation Providers\Classes\BasicDateOperationProvider.cs" />
-    <Compile Include="Code\Date Operation Providers\Interfaces\IDateOperationsProvider.cs" />
-    <Compile Include="Code\Holiday Calendars\Classes\WeekendHolidayCalendar.cs" />
-    <Compile Include="Code\Holiday Calendars\Interfaces\IHolidayCalendar.cs" />
     <Compile Include="Code\Job Repositories\Classes\BasicJobRepository.cs" />
     <Compile Include="Code\Job Repositories\Classes\FileJobRepository.cs" />
     <Compile Include="Code\Job Run\Classes\JobRun.cs" />
@@ -56,12 +49,12 @@
     <Compile Include="Code\Job Specification Types\Interfaces\IJobSpecification.cs" />
     <Compile Include="Code\MOVE\Events\ScheduledTimeSpecificationListChangedEventArgs.cs" />
     <Compile Include="Code\MOVE\Model\Classes\ScheduledTimeSpecification.cs" />
+    <Compile Include="Code\MOVE\Model\GuntherCommandLineArgumentsStructure.cs" />
     <Compile Include="Code\MOVE\Model\GuntherModel.cs" />
     <Compile Include="Code\Schedule Specification Types\Classes\DailyScheduleSpecification.cs" />
     <Compile Include="Code\Job Repositories\Interfaces\IScheduledJobRepository.cs" />
     <Compile Include="Code\Scheduled Job Specification Types\Classes\ScheduledJobSpecification.cs" />
     <Compile Include="Code\Scheduled Job Specification Types\ScheduledJobSpecificationTypes.cs" />
-    <Compile Include="Code\Enumerations\HolidayCalendarEnumeration.cs" />
     <Compile Include="Code\Job Specification Types\JobSpecificationTypes.cs" />
     <Compile Include="Code\Classes\DaysOfWeekGrid.cs" />
     <Compile Include="Code\Classes\ScheduleOperations.cs" />
@@ -92,8 +85,11 @@
     <Content Include="Xml\TestJobRunFile.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Lib\Duomo.Common.Lib\Duomo.Common.Lib.csproj">
-      <Project>{8ACA8572-2814-492E-B4F8-FC9DAE6B0B44}</Project>
+    <Folder Include="Code\Enumerations\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Lib\Lib\Lib\Duomo.Common.Lib.csproj">
+      <Project>{95F51A9B-2168-44BF-8F89-C797F6A51A0F}</Project>
       <Name>Duomo.Common.Lib</Name>
     </ProjectReference>
   </ItemGroup>

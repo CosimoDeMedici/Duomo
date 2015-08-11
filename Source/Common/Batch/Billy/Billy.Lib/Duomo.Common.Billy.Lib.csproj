@@ -42,12 +42,6 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Lib\Duomo.Common.Lib\Duomo.Common.Lib.csproj">
-      <Project>{8ACA8572-2814-492E-B4F8-FC9DAE6B0B44}</Project>
-      <Name>Duomo.Common.Lib</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

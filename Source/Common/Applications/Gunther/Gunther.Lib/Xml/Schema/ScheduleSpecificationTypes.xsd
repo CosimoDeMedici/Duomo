@@ -3,8 +3,12 @@
            elementFormDefault="qualified"
            targetNamespace="urn:ScheduleSpecificationTypes"
            xmlns="urn:ScheduleSpecificationTypes"
+           xmlns:dcl="urn:Duomo.Common.Lib"
            xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="urn:Duomo.Common.Lib" schemaLocation="..\..\..\..\..\Lib\Duomo.Common.Lib\Xml\Schemas\Duomo.Common.Lib.Enumerations.xsd"/>
+  <xs:import namespace="urn:Duomo.Common.Lib" schemaLocation="..\..\..\..\..\Lib\Duomo.Common.Lib\Xml\Schemas\Duomo.Common.Lib.Types.xsd"/>
   
+
   <!--xsd.exe "C:\Code\DEV\Duomo\Source\Common\Applications\Gunther\Gunther.Lib\Xml\Schema\ScheduleSpecificationTypes.xsd" /c /out:C:\temp-->
 
   <!--NOTE: will not compile without a root node. These types should be incorporated into the ScheduledJobSpecificationTypes.-->
@@ -18,32 +22,18 @@
       </xs:choice>
     </xs:sequence>
   </xs:complexType>-->
-
-  <xs:simpleType name="HolidayCalendarEnumeration">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="NONE"/>
-      <xs:enumeration value="WKN"/>
-      <xs:enumeration value="USD"/>
-    </xs:restriction>
-  </xs:simpleType>
-  
-  <xs:simpleType name="DaysOfWeekGrid">
-    <xs:restriction base="xs:string">
-      <xs:pattern value="[M_][T_][W_][T_][F_][S_][S_]"/>
-    </xs:restriction>
-  </xs:simpleType>
   
   <xs:complexType name="DailyScheduleSpecification">
     <xs:attribute name="Time" type="xs:time" use="required"/>
-    <xs:attribute name="DaysOfWeek" type="DaysOfWeekGrid" use="required"/>
-    <xs:attribute name="HolidayCalendar" type="HolidayCalendarEnumeration" use="required"/>
+    <xs:attribute name="DaysOfWeek" type="dcl:DaysOfWeekGrid" use="required"/>
+    <xs:attribute name="HolidayCalendar" type="dcl:HolidayCalendarEnumeration" use="required"/>
   </xs:complexType>
 
   <xs:complexType name="HourlyScheduleSpecification">
     <xs:attribute name="StartTime" type="xs:time" use="required"/>
     <xs:attribute name="EndTime" type="xs:time" use="required"/>
-    <xs:attribute name="DaysOfWeek" type="DaysOfWeekGrid" use="required"/>
-    <xs:attribute name="HolidayCalendar" type="HolidayCalendarEnumeration" use="required"/>
+    <xs:attribute name="DaysOfWeek" type="dcl:DaysOfWeekGrid" use="required"/>
+    <xs:attribute name="HolidayCalendar" type="dcl:HolidayCalendarEnumeration" use="required"/>
   </xs:complexType>
   
 </xs:schema>

@@ -20,7 +20,7 @@ namespace XsdImportHandlingWrapper
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            string initialXsdFileRootedPath = @"C:\Code\DEV\Duomo\Source\Common\Experiments\Silvas\Silvas.Lib\Xml\Schemas\ScheduledJobSpecificationTypes.xsd";
+            string initialXsdFileRootedPath = @"C:\Code\DEV\Duomo\Source\Common\Lib\Lib\Lib\Xml\Schemas\Interfaces.Database.xsd";
 
             HashSet<string> importedXsdFileRootedPathsHashSet = new HashSet<string>();
             Program.AddImportFilePathsForFilePath(initialXsdFileRootedPath, importedXsdFileRootedPathsHashSet);

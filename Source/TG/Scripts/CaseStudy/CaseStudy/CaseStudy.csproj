@@ -80,8 +80,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Common\Lib\Duomo.Common.Lib\Duomo.Common.Lib.csproj">
-      <Project>{8aca8572-2814-492e-b4f8-fc9dae6b0b44}</Project>
+    <ProjectReference Include="..\..\..\..\Common\Lib\Lib\Lib\Duomo.Common.Lib.csproj">
+      <Project>{95F51A9B-2168-44BF-8F89-C797F6A51A0F}</Project>
       <Name>Duomo.Common.Lib</Name>
     </ProjectReference>
   </ItemGroup>

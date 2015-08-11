@@ -85,8 +85,8 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Lib\Duomo.Common.Lib\Duomo.Common.Lib.csproj">
-      <Project>{8ACA8572-2814-492E-B4F8-FC9DAE6B0B44}</Project>
+    <ProjectReference Include="..\..\..\Lib\Lib\Lib\Duomo.Common.Lib.csproj">
+      <Project>{95F51A9B-2168-44BF-8F89-C797F6A51A0F}</Project>
       <Name>Duomo.Common.Lib</Name>
     </ProjectReference>
     <ProjectReference Include="..\Billy.Lib\Duomo.Common.Billy.Lib.csproj">

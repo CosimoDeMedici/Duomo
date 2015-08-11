@@ -1,8 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaseStudy", "CaseStudy\CaseStudy.csproj", "{803B296E-2C90-4ED4-B5F0-F77AA61A2D6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Duomo.Common.Lib", "..\..\..\Common\Lib\Duomo.Common.Lib\Duomo.Common.Lib.csproj", "{8ACA8572-2814-492E-B4F8-FC9DAE6B0B44}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Duomo.Common.Lib", "..\..\..\Common\Lib\Lib\Lib\Duomo.Common.Lib.csproj", "{95F51A9B-2168-44BF-8F89-C797F6A51A0F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,10 +15,10 @@ Global
 		{803B296E-2C90-4ED4-B5F0-F77AA61A2D6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{803B296E-2C90-4ED4-B5F0-F77AA61A2D6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{803B296E-2C90-4ED4-B5F0-F77AA61A2D6C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8ACA8572-2814-492E-B4F8-FC9DAE6B0B44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8ACA8572-2814-492E-B4F8-FC9DAE6B0B44}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8ACA8572-2814-492E-B4F8-FC9DAE6B0B44}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8ACA8572-2814-492E-B4F8-FC9DAE6B0B44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95F51A9B-2168-44BF-8F89-C797F6A51A0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95F51A9B-2168-44BF-8F89-C797F6A51A0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95F51A9B-2168-44BF-8F89-C797F6A51A0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95F51A9B-2168-44BF-8F89-C797F6A51A0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

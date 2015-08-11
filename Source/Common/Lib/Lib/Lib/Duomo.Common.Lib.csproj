@@ -114,10 +114,6 @@
     <Compile Include="Code\Objects\Labeled\Interfaces\ILabel.cs" />
     <Compile Include="Code\Objects\Labeled\Interfaces\ILabeled.cs" />
     <Compile Include="Code\Office\Classes\Missing.cs" />
-    <Compile Include="Code\Office\Excel\Classes\Excel.cs" />
-    <Compile Include="Code\Office\Excel\Classes\Range.cs" />
-    <Compile Include="Code\Office\Excel\Classes\Workbook.cs" />
-    <Compile Include="Code\Office\Excel\Classes\Worksheet.cs" />
     <Compile Include="Code\Security\Authentications\Classes\Authentication.cs" />
     <Compile Include="Code\Security\Authentications\Interfaces\IAuthentication.cs" />
     <Compile Include="Code\Services\Excel\Classes\ExcelService.cs" />
