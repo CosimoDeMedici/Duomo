@@ -25,18 +25,30 @@ namespace Duomo.Common.Lib.Excel
     public class Workbook
     {
         public XL.Workbook XlWorkbook { get; set; }
+        public Excel Application
+        {
+            get
+            {
+                XL.Application xlApp = this.XlWorkbook.Application;
+
+                Excel retValue = new Excel(xlApp);
+                return retValue;
+            }
+        }
         public string Name
         {
             get
             {
-                return this.XlWorkbook.Name;
+                string retValue = this.XlWorkbook.Name;
+                return retValue;
             }
         }
         public string FileRootedPath
         {
             get
             {
-                return this.XlWorkbook.FullName;
+                string retValue = this.XlWorkbook.FullName;
+                return retValue;
             }
         }
         public ExcelFileFormatEnumeration FileFormat
@@ -73,6 +85,8 @@ namespace Duomo.Common.Lib.Excel
             }
         }
 
+
+        public Workbook() { }
 
         public Workbook(XL.Workbook workbook)
         {
@@ -123,6 +137,101 @@ namespace Duomo.Common.Lib.Excel
         public void Close()
         {
             this.XlWorkbook.Close(false, Missing.Value, Missing.Value);
+        }
+
+        public Worksheet GetNewWorksheet()
+        {
+            XL.Worksheet xlWs = this.XlWorkbook.Worksheets.Add(Missing.Value, Missing.Value, Missing.Value, Missing.Value);
+
+            Worksheet ws = new Worksheet(xlWs);
+            return ws;
+        }
+
+        public Worksheet GetWorksheet(string wsName)
+        {
+            XL.Worksheet xlWs = this.XlWorkbook.Worksheets[wsName];
+
+            Worksheet retValue = new Worksheet(xlWs);
+            return retValue;
+        }
+
+        public Worksheet GetWorksheet(int wsNumber)
+        {
+            XL.Worksheet xlWs = this.XlWorkbook.Worksheets[wsNumber + 1]; // Excel is index-1 based.
+
+            Worksheet retValue = new Worksheet(xlWs);
+            return retValue;
+        }
+
+        public bool HasWorksheet(string wsName)
+        {
+            bool retValue = false;
+
+            foreach(XL.Worksheet curWs in this.XlWorkbook.Worksheets)
+            {
+                if (wsName == curWs.Name)
+                {
+                    retValue = true;
+                    break;
+                }
+            }
+
+            return retValue;
+        }
+
+        public void DeleteWorksheet(string wsName)
+        {
+            Worksheet wsToDelete = this.GetWorksheet(wsName);
+
+            wsToDelete.XlWorksheet.Delete();
+        }
+
+        public void SetNamedRange(string name, Range range)
+        {
+            this.XlWorkbook.Names.Add(name, range.XlRange);
+        }
+
+        private XL.Name GetXlName(string name)
+        {
+            XL.Name retValue = null;
+
+            foreach (XL.Name curXlName in this.XlWorkbook.Names)
+            {
+                if (name == curXlName.Name)
+                {
+                    retValue = curXlName;
+                    break;
+                }
+            }
+
+            return retValue;
+        }
+
+        public bool HasNamedRange(string name)
+        {
+            bool retValue = null == this.GetXlName(name);
+            return retValue;
+        }
+
+        public XL.Range GetXlRangeByName(string name)
+        {
+            XL.Name xlName = this.GetXlName(name);
+
+            XL.Range retValue = xlName.RefersToRange;
+            return retValue;
+        }
+
+        public Range GetNamedRange(string name)
+        {
+            XL.Range xlRng = this.GetXlRangeByName(name);
+
+            Range retValue = new Range(xlRng);
+            return retValue;
+        }
+
+        public void RunAutoMacrosAutoOpen()
+        {
+            this.XlWorkbook.RunAutoMacros(XL.XlRunAutoMacro.xlAutoOpen);
         }
     }
 }

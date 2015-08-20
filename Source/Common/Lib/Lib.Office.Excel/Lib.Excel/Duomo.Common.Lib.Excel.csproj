@@ -46,9 +46,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Code\Excel\Classes\Excel.cs" />
+    <Compile Include="Code\Excel\Classes\ExcelObjectHierarchy.cs" />
+    <Compile Include="Code\Excel\Classes\ExcelOperations.cs" />
     <Compile Include="Code\Excel\Classes\Range.cs" />
+    <Compile Include="Code\Excel\Classes\RangeFormatOperations.cs" />
+    <Compile Include="Code\Excel\Classes\RangeOperations.cs" />
+    <Compile Include="Code\Excel\Classes\RangeSize.cs" />
+    <Compile Include="Code\Excel\Regression\Classes\AnovaStatistics.cs" />
+    <Compile Include="Code\Excel\Regression\Classes\AnovaRow.cs" />
+    <Compile Include="Code\Excel\Regression\Classes\Regression.cs" />
     <Compile Include="Code\Excel\Classes\Workbook.cs" />
+    <Compile Include="Code\Excel\Classes\WorkbookOperations.cs" />
     <Compile Include="Code\Excel\Classes\Worksheet.cs" />
+    <Compile Include="Code\Excel\Classes\WorksheetFormatOperations.cs" />
+    <Compile Include="Code\Excel\Classes\WorksheetOperations.cs" />
+    <Compile Include="Code\Excel\Regression\Classes\Statistics.cs" />
+    <Compile Include="Code\Excel\Regression\Classes\CoefficentStatisticRow.cs" />
+    <Compile Include="Code\Excel\Regression\Classes\CoefficentStatistics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
